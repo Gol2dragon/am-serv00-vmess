@@ -159,7 +159,7 @@ install_cloudflared(){
   if $IS_ROOT; then
     DEST="/usr/local/bin"
   else
-    DEST="$HOME/.local/bin"
+    DEST="/usr/local/bin"
     mkdir -p "$DEST"
     # 提示用户将 ~/.local/bin 加入 PATH（脚本不会自动修改 shell 文件）
     info "非 root 模式：cloudflared 将安装到 $DEST 。如果运行报 'cloudflared: command not found'，请将 $DEST 加入你的 PATH（例如在 ~/.profile/ ~/.bashrc 中添加）。"
