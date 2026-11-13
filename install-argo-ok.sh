@@ -374,7 +374,7 @@ FIRST_PORT=$(echo -e "$MAPPINGS" | head -n 1 | awk -F',' '{print $2}')
 FIRST_PORT=${FIRST_PORT:-58888} # 如果没取到则默认 58888
 
 # 强制将 ExecStart 固定为你要求的 --token 和 --url 写法
-EXEC_CMD="$CLOUD_BIN tunnel run --token ${TUNNEL_TOKEN_CONTENT} --url http://localhost:${FIRST_PORT}"
+EXEC_CMD="/usr/local/bin/cloudflared tunnel run --token ${TUNNEL_TOKEN_CONTENT} --url http://localhost:${FIRST_PORT}"
 # ---------- 兼容逻辑 END ----------
 
 # ---------- 根据是否 root 创建 systemd 服务或 user service ----------
